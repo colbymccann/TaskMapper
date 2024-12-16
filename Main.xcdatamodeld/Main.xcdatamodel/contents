@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="23H124" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="MyTask" representedClassName="MyTask" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isImportant" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="locationAdministrativeArea" optional="YES" attributeType="String"/>
+        <attribute name="locationCountry" optional="YES" attributeType="String"/>
+        <attribute name="locationIdea" optional="YES" attributeType="String"/>
+        <attribute name="locationLocality" optional="YES" attributeType="String"/>
+        <attribute name="locationPostalCode" optional="YES" attributeType="String"/>
+        <attribute name="locationSubThoroughfare" optional="YES" attributeType="String"/>
+        <attribute name="locationThoroughfare" optional="YES" attributeType="String"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="myID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="parentList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyTaskList" inverseName="myTasks" inverseEntity="MyTaskList"/>
+    </entity>
+    <entity name="MyTaskList" representedClassName="MyTaskList" syncable="YES" codeGenerationType="class">
+        <relationship name="myTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MyTask" inverseName="parentList" inverseEntity="MyTask"/>
+    </entity>
+</model>
